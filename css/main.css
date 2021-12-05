@@ -1,0 +1,55 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    background-image: url("../images/plane.png");
+    background-size: cover;
+    height: 120px;
+    color: white;
+}
+
+#centerHeader {
+    margin-left: 150px;
+}
+
+main {
+    text-align: center;
+}
+
+#reservationForm{
+    max-width: 500px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: max-content max-content;
+    grid-row-gap: 10px;
+    grid-column-gap: 5px;
+    background-color: aliceblue;
+    padding: 10px;
+    text-align: left;
+}
+
+/*Rules to standardize the width of form elements*/
+
+select {
+    width: 143px;
+}
+
+input[type="date"]  {
+    width: 138px;
+}
+
+input[type="number"] {
+    width:135px;
+}
+
+/* Rules to initialize text displays */
+
+.errorMessage {
+    display: none;
+    color: red;
+}
+#responseDisplay {
+    display: none;
+}
+
+

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>res</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="processForm.js"></script>
+</head>
+<body onload="setupForm()">
+<header>
+    <div id="leftHeader"></div>
+    <div id="centerHeader">
+        <h1>NYU Airlines</h1>
+        <h2>where ideas take flight</h2>
+    </div>
+    <div id="rightHeader">
+        <img src="images/nyu.png" alt="nyu logo">
+    </div>
+</header>
+<main>
+    <h1>Check flight availability here:</h1>
+
+    <form id="reservationForm" onsubmit="event.preventDefault(); validateForm();">
+        <label for="fromCity">From</label>
+        <div>
+            <select id="fromCity">
+                <option>Select</option>
+                <option>New York</option>
+                <option>Los Angeles</option>
+                <option>Chicago</option>
+            </select>
+            <p id="fromCityError" class="errorMessage"></p>
+        </div>
+        <label for="toCity">To</label>
+        <div>
+            <select id="toCity">
+                <option>Select</option>
+                <option>New York</option>
+                <option>Los Angeles</option>
+                <option>Chicago</option>
+            </select>
+            <p id="toCityError" class="errorMessage"></p>
+            <p id="cityMatchError" class="errorMessage"></p>
+        </div>
+        <div>
+            <label for="oneWay">One Way</label>
+            <input type="radio" id="oneWay" name="itinerary">
+        </div>
+        <div>
+            <label for="roundtrip">Roundtrip</label>
+            <input type="radio" id="roundtrip" name="itinerary" checked>
+        </div>
+
+        <label for="depart">Depart</label>
+        <div>
+            <input type="date" id="depart">
+            <p id="departDateError" class="errorMessage"></p>
+        </div>
+
+        <label for="return" id="returnLabel">Return</label>
+        <div>
+            <input type="date" id="return">
+            <p id="returnDateError" class="errorMessage"></p>
+        </div>
+        <label for="numberPassengers">Number of Passengers</label>
+        <div>
+            <input type="number" id="numberPassengers" placeholder="Between 1 and 9">
+            <p id="passengerError" class="errorMessage"></p>
+        </div>
+
+        <label for="name">User Name</label>
+        <div>
+            <input type="text" id="name" size="15" placeholder="eg. John Doe">
+            <p id="nameError" class="errorMessage"></p>
+        </div>
+
+        <label for="phone">Phone Number</label>
+
+        <div>
+            <input type="text" id="phone" size="15" placeholder="eg. 123 456 7890">
+            <p id="phoneError" class="errorMessage"></p>
+        </div>
+
+        <input type="submit" value="Enter">
+    </form>
+
+    <div id="responseDisplay">
+        <h1> Thanks for your request. Unfortunately, there are no flights on those days</h1>
+    </div>
+</main>
+</body>
+</html>
